@@ -18,6 +18,6 @@ package arreglo_de_objetos;
  */
 public class Main {
     public static void main(String[] args) {
-        
+        Vertice[] vertices = new Vertice[5];
     }
 }
