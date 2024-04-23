@@ -7,7 +7,7 @@ package arreglo_de_objetos;
 public class Vertice {
     private String name;
     private int number;
-
+    
     public Vertice(String name, int number) {
         this.name = name;
         this.number = number;
@@ -55,8 +55,10 @@ public class Vertice {
      */
     public boolean isEmpty_vertices(Vertice[] vertices) {
         for (Vertice vertice : vertices) {
-            if (vertice.getName() != null && vertice.getNumber() != 0) {
-                return false; // El arreglo tiene al menos un elemento no nulo.
+            if (vertice != null) {
+                if (vertice.getName() != null && vertice.getNumber() != 0) {
+                    return false; // El arreglo tiene al menos un elemento no nulo.
+                }
             }
         }
         return true; // Todos los elementos del arreglo son nulos.
@@ -72,9 +74,9 @@ public class Vertice {
      */
     public void insert_vertice(String name, int number, Vertice[] vertices) {
         for (Vertice vertice : vertices) {
-            if (vertice.getName() == null && vertice.getNumber() == 0) {
-                vertice.setName(name);
-                vertice.setNumber(number);
+            if (vertice == null) {
+                vertice = new Vertice(name, number);
+                break;
             }
         }
     }
