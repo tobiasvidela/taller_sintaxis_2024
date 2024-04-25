@@ -12,6 +12,8 @@
  */
 package arreglo_de_objetos;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Videla Guliotti Tobías Uriel
@@ -19,7 +21,7 @@ package arreglo_de_objetos;
 public class Main {
     
     public static void printMenu() {
-        System.out.println("\n\n\n\n\n");
+        System.out.println("\n\n\n");
         System.out.println(" Taller1: Arreglo de Objetos\n");
         System.out.println("1. Ver vértices");
         System.out.println("2. Insertar vértice");
@@ -29,6 +31,44 @@ public class Main {
     }
     
     public static void main(String[] args) {
-        
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        boolean continuar = true;
+        // Crear arreglo de 5 Vertices
+        Grafo grafo = new Grafo(5);
+        // ejecutar menu de opciones
+        do {
+            printMenu();
+            opcion = Integer.parseInt(scanner.nextLine());
+            switch (opcion) {
+                case 1 -> {
+                    System.out.println("Función pendiente de implementar.");
+                }
+                case 2 -> {
+                    System.out.print("\n Nombre: ");
+                    String name = scanner.nextLine();
+                    System.out.print("\n Número: ");
+                    int number = Integer.parseInt(scanner.nextLine());
+                    grafo.insert_vertice(name, number);
+                }
+                case 3 -> {
+                    System.out.print("\n Nombre del vértice a modificar: ");
+                    String name = scanner.nextLine();
+                    grafo.update_vertice(name);
+                }
+                case 4 -> {
+                    System.out.print("\n Nombre del vértice a eliminar: ");
+                    String name = scanner.nextLine();
+                    grafo.delete_vertice(name);
+                }
+                case 0 -> {
+                    System.out.println("Saliendo...");
+                    continuar = false;
+                }
+                default -> {
+                    System.out.println("Inválida.");
+                }
+            }
+        } while (continuar);
     }
 }

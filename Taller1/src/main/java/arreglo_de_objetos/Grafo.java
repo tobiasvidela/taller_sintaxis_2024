@@ -63,13 +63,30 @@ public class Grafo {
         }
     }
 
+    /**
+     * Modificar el número de un vértice que se encuentre dentro del arreglo.
+     * @param name Nombre del vértice a modificar.
+     */
     public void update_vertice(String name) {
         for (Vertice vertice : vertices) {
-            if (vertice.getName().equalsIgnoreCase(name)) {
+            if (vertice != null && vertice.getName().equalsIgnoreCase(name)) {
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("\n Nuevo número: ");
                 int number = Integer.parseInt(scanner.nextLine());
                 vertice.setNumber(number);
+                break;
+            }
+        }
+    }
+    
+    /**
+     * Dar de baja un vértice dentro del arreglo.
+     * @param name Nombre del vértice a eliminar.
+     */
+    public void delete_vertice(String name) {
+        for (int i = 0; i < vertices.length; i++) {
+            if (vertices[i] != null && check_vertice(name)) {
+                vertices[i] = null;
                 break;
             }
         }
