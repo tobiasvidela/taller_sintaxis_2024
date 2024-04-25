@@ -39,6 +39,7 @@ public class Main {
         // ejecutar menu de opciones
         do {
             printMenu();
+            System.out.print(" Opcion: ");
             opcion = Integer.parseInt(scanner.nextLine());
             switch (opcion) {
                 case 1 -> {

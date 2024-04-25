@@ -25,7 +25,9 @@ public class Grafo {
     @Override
     public String toString() {
         for (Vertice vertice : vertices) {
-            System.out.println(vertice.toString());
+            if (vertice != null) {
+                System.out.println(vertice.toString());
+            }
         }
         return "";
     }
