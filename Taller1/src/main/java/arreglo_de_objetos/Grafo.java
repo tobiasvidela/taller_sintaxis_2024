@@ -22,6 +22,14 @@ public class Grafo {
         vertices = new Vertice[tamaño];
     }
     
+    @Override
+    public String toString() {
+        for (Vertice vertice : vertices) {
+            System.out.println(vertice.toString());
+        }
+        return "";
+    }
+    
     /**
      * Verificar la existencia de un vértice dentro del arreglo.
      * @param name El nombre del vértice a verificar.

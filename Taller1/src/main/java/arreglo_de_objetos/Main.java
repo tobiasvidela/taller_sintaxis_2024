@@ -42,7 +42,7 @@ public class Main {
             opcion = Integer.parseInt(scanner.nextLine());
             switch (opcion) {
                 case 1 -> {
-                    System.out.println("Función pendiente de implementar.");
+                    grafo.toString();
                 }
                 case 2 -> {
                     System.out.print("\n Nombre: ");
