@@ -95,7 +95,7 @@ public class Grafo {
      */
     public void delete_vertice(String name) {
         for (int i = 0; i < vertices.length; i++) {
-            if (vertices[i] != null && check_vertice(name)) {
+            if (check_vertice(name) && vertices[i].getName().equalsIgnoreCase(name)) {
                 vertices[i] = null;
                 break;
             }
