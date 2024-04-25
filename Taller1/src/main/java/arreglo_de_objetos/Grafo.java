@@ -19,4 +19,18 @@ public class Grafo {
     public Grafo(int tamaño) {
         vertices = new Vertice[tamaño];
     }
+    
+    /**
+     * 
+     * @param name El nombre del vértice a verificar.
+     * @return true si el vértice existe, de lo contrario false.
+     */
+    public boolean check_vertice(String name) {
+        for (Vertice vertice : vertices) {
+            if (vertice != null && vertice.getName().equalsIgnoreCase(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
