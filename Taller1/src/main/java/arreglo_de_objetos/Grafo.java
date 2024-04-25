@@ -21,7 +21,7 @@ public class Grafo {
     }
     
     /**
-     * 
+     * Verificar la existencia de un vértice dentro del arreglo.
      * @param name El nombre del vértice a verificar.
      * @return true si el vértice existe, de lo contrario false.
      */
@@ -32,5 +32,18 @@ public class Grafo {
             }
         }
         return false;
+    }
+    
+    /**
+     * verificar si el arreglo de vértices esta vacío.
+     * @return true si todos sus elementos se encuentran en null, de lo contrario false.
+     */
+    public boolean isEmpty_vertices() {
+        for (Vertice vertice : vertices) {
+            if (vertice != null) {
+                return false; // Existe al menos un vértice no nulo.
+            }
+        }
+        return true; // Todos sus elementos son null.
     }
 }
