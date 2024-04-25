@@ -24,12 +24,16 @@ public class Grafo {
     
     @Override
     public String toString() {
-        for (Vertice vertice : vertices) {
-            if (vertice != null) {
-                System.out.println(vertice.toString());
+        if (isEmpty_vertices()) {
+            return "\n\n No hay vértices.";
+        } else {
+            for (Vertice vertice : vertices) {
+                if (vertice != null) {
+                    System.out.println(vertice.toString());
+                }
             }
+            return "";
         }
-        return "";
     }
     
     /**
@@ -61,15 +65,24 @@ public class Grafo {
     
     /**
      * Dar de alta un vértice dentro del arreglo.
-     * @param name Nombre del vértice a insertar.
-     * @param number Número o valor del vértice a insertar.
      */
-    public void insert_vertice(String name, int number) {
+    public void insert_vertice() {
+        int full = 0;
         for (int i = 0; i < vertices.length; i++) {
             if (vertices[i] == null) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("\n Nombre: ");
+                String name = scanner.nextLine();
+                System.out.print("\n Número: ");
+                int number = Integer.parseInt(scanner.nextLine());
                 vertices[i] = new Vertice(name,number);
                 break;
+            } else {
+                full++;
             }
+        }
+        if (full == vertices.length) {
+            System.out.println("\n No se pueden cargar más vértices. El arreglo está lleno");
         }
     }
 
@@ -78,14 +91,18 @@ public class Grafo {
      * @param name Nombre del vértice a modificar.
      */
     public void update_vertice(String name) {
-        for (Vertice vertice : vertices) {
-            if (vertice != null && vertice.getName().equalsIgnoreCase(name)) {
-                Scanner scanner = new Scanner(System.in);
-                System.out.print("\n Nuevo número: ");
-                int number = Integer.parseInt(scanner.nextLine());
-                vertice.setNumber(number);
-                break;
+        if (!isEmpty_vertices() && check_vertice(name)) {
+            for (Vertice vertice : vertices) {
+                if (vertice != null && vertice.getName().equalsIgnoreCase(name)) {
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.print("\n Nuevo número: ");
+                    int number = Integer.parseInt(scanner.nextLine());
+                    vertice.setNumber(number);
+                    break;
+                }
             }
+        } else {
+            System.out.println("\n El arreglo está vacío, o no existe un vértice con ese nombre.");
         }
     }
     
@@ -94,11 +111,15 @@ public class Grafo {
      * @param name Nombre del vértice a eliminar.
      */
     public void delete_vertice(String name) {
-        for (int i = 0; i < vertices.length; i++) {
-            if (check_vertice(name) && vertices[i].getName().equalsIgnoreCase(name)) {
-                vertices[i] = null;
-                break;
+        if (!isEmpty_vertices() && check_vertice(name)) {
+            for (int i = 0; i < vertices.length; i++) {
+                if (check_vertice(name) && vertices[i].getName().equalsIgnoreCase(name)) {
+                    vertices[i] = null;
+                    break;
+                }
             }
+        } else {
+            System.out.println("\n El arreglo está vacío, o no existe un vértice con ese nombre.");
         }
     }
 }

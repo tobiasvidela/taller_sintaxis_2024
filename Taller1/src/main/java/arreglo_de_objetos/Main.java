@@ -46,11 +46,7 @@ public class Main {
                     grafo.toString();
                 }
                 case 2 -> {
-                    System.out.print("\n Nombre: ");
-                    String name = scanner.nextLine();
-                    System.out.print("\n Número: ");
-                    int number = Integer.parseInt(scanner.nextLine());
-                    grafo.insert_vertice(name, number);
+                    grafo.insert_vertice();
                 }
                 case 3 -> {
                     System.out.print("\n Nombre del vértice a modificar: ");
@@ -67,7 +63,7 @@ public class Main {
                     continuar = false;
                 }
                 default -> {
-                    System.out.println("Inválida.");
+                    System.out.println("\n Inválida.");
                 }
             }
         } while (continuar);
