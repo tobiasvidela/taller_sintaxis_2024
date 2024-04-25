@@ -9,6 +9,8 @@
  */
 package arreglo_de_objetos;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Videla Guliotti Tobías Uriel
@@ -35,7 +37,7 @@ public class Grafo {
     }
     
     /**
-     * verificar si el arreglo de vértices esta vacío.
+     * Verificar si el arreglo de vértices esta vacío.
      * @return true si todos sus elementos se encuentran en null, de lo contrario false.
      */
     public boolean isEmpty_vertices() {
@@ -45,5 +47,31 @@ public class Grafo {
             }
         }
         return true; // Todos sus elementos son null.
+    }
+    
+    /**
+     * Dar de alta un vértice dentro del arreglo.
+     * @param name Nombre del vértice a insertar.
+     * @param number Número o valor del vértice a insertar.
+     */
+    public void insert_vertice(String name, int number) {
+        for (int i = 0; i < vertices.length; i++) {
+            if (vertices[i] == null) {
+                vertices[i] = new Vertice(name,number);
+                break;
+            }
+        }
+    }
+
+    public void update_vertice(String name) {
+        for (Vertice vertice : vertices) {
+            if (vertice.getName().equalsIgnoreCase(name)) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("\n Nuevo número: ");
+                int number = Integer.parseInt(scanner.nextLine());
+                vertice.setNumber(number);
+                break;
+            }
+        }
     }
 }
