@@ -15,10 +15,10 @@ import java.util.Scanner;
  *
  * @author Videla Guliotti Tobías Uriel
  */
-public class Utilidades {
+public class Grafo {
     private Vertice[] vertices;
     
-    public Utilidades(int tamaño) {
+    public Grafo(int tamaño) {
         vertices = new Vertice[tamaño];
         for (int i = 0; i < vertices.length; i++) {
             vertices[i] = null;
