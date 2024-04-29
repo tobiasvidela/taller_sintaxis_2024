@@ -35,7 +35,7 @@ public class Main {
         int opcion;
         boolean continuar = true;
         // Crear arreglo de 5 Vertices
-        Grafo grafo = new Grafo(5);
+        Utilidades grafo = new Utilidades(5);
         // ejecutar menu de opciones
         do {
             printMenu();
