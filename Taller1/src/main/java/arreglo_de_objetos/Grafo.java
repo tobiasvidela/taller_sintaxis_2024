@@ -75,7 +75,7 @@ public class Grafo {
             if (vertices[i] == null) {
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("\n Nombre: ");
-                String name = scanner.nextLine();
+                String name = scanner.nextLine().toUpperCase();
                 System.out.print("\n Número: ");
                 int number = Integer.parseInt(scanner.nextLine());
                 vertices[i] = new Vertice(name,number);
