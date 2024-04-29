@@ -20,6 +20,9 @@ public class Utilidades {
     
     public Utilidades(int tamaño) {
         vertices = new Vertice[tamaño];
+        for (int i = 0; i < vertices.length; i++) {
+            vertices[i] = null;
+        }
     }
     
     @Override
