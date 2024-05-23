@@ -64,12 +64,11 @@ public class AFD {
             } else {
                 System.out.println("Cadena rechazada.\n");
             }
-            
-            while(!yes.equalsIgnoreCase("y") && !yes.equalsIgnoreCase("n")){
+            do {
                 System.out.println("\n¿Desea seguir probando cadenas?");
                 System.out.print("Y/y para sí, N/n para no\n:  ");
                 yes = entrada.nextLine();
-            }
+            } while(!yes.equalsIgnoreCase("y") && !yes.equalsIgnoreCase("n"));
         } while (yes.equalsIgnoreCase("y"));
         System.out.println("\n\n\n");
     }
