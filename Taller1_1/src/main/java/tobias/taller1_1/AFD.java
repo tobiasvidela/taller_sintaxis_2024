@@ -1,6 +1,5 @@
 package tobias.taller1_1;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -16,6 +15,8 @@ public class AFD {
          * q1 = 1; normal
          * q2 = 2; final
          * q3 = 3; error
+         * 
+         * Acepta solo cadenas que empiecen con b y terminen con a
         */
         
         int q = 0; //estado inicial
@@ -63,12 +64,11 @@ public class AFD {
             } else {
                 System.out.println("Cadena rechazada.\n");
             }
-            entrada.close();
+            
             while(!yes.equalsIgnoreCase("y") && !yes.equalsIgnoreCase("n")){
                 System.out.println("\n¿Desea seguir probando cadenas?");
                 System.out.print("Y/y para sí, N/n para no\n:  ");
                 yes = entrada.nextLine();
-                entrada.close();
             }
         } while (yes.equalsIgnoreCase("y"));
         System.out.println("\n\n\n");
