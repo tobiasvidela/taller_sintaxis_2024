@@ -1,7 +1,7 @@
 /**
  * Implementación de los ejercicios 1 y 2 del Taller 2 
  */
-package tobias.taller2;
+package tobias.taller2_0;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package tobias.taller2;
+package tobias.taller2_0;
 
 import java.util.Scanner;
 
