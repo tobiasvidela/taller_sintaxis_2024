@@ -1,5 +1,6 @@
 package tobias.taller2_0;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -35,32 +36,38 @@ public class Grafo {
     
     public static boolean existeCamino() {
         Scanner sc = new Scanner(System.in);
-        boolean existe = false;
         char confirm;
-        int totalIngresados = 0;
-        int origen = 0, destino;
+        ArrayList<Integer> nodos = new ArrayList<Integer>();
         
         System.out.println("\n Sólo puedes ingresar de 0 hasta 10 nodos");
         for (int i = 0; i < 10; i++) {
             do {
-                System.out.println("¿Desea indicar un nodo? (y | n)");
+                System.out.print("¿Desea agregar un nodo? (y | n): ");
                 confirm = sc.nextLine().toLowerCase().charAt(0);
             } while (!(confirm == 'y' || confirm == 'n'));
             if (confirm == 'n') {
                 break;
-            } else {
-                totalIngresados++;
             }
-            System.out.print("\n Nodo " + i + ": ");
-            if (totalIngresados == 1) {
-                destino = Integer.parseInt(sc.nextLine());
-                origen = destino;
-            } else {
-                destino = Integer.parseInt(sc.nextLine());
-            }
-            existe = MA[origen][destino] == 1;
+            System.out.print("\n Nodo " + (i+1) + ": ");
+            int nodo = Integer.parseInt(sc.nextLine());
+            nodos.add(nodo);
         }
-        return existe;
+        
+        if (nodos.isEmpty()) {
+            return false;
+        } else {
+            // verificar si existe camino pasando por esos nodos
+            if (nodos.size() > 1) {
+                for (int i : nodos) {
+                    if (MA[i][i+1] == 0 && i < nodos.size()-1) {
+                        return false;
+                    }
+                }
+            } else {
+                return true;
+            }
+        }
+        return true;
     }
     
     public static void printGrafo() {
@@ -71,7 +78,6 @@ public class Grafo {
                     System.out.println(" (" + i + ", " + j + ")");
                 }
             }
-            System.out.println("");
         }
         System.out.println("\n");
     }
