@@ -63,7 +63,7 @@ public class Grafo {
         return existe;
     }
     
-    public void printGrafo() {
+    public static void printGrafo() {
         System.out.println("\n Grafo:\n");
         for (int i = 0; i < 10; i++) {
             for (int j = i+1; j < 10; j++) {
@@ -109,6 +109,10 @@ public class Grafo {
                     } else {
                         System.out.println("No hay un camino pasando por esos nodos.");
                     }
+                }
+                case 4 -> {
+                    System.out.println("\n --  Mostrar todos los nodos unidos por aristas");
+                    printGrafo();
                 }
                 case 0 -> {}
             }
