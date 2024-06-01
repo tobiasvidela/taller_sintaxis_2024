@@ -14,6 +14,7 @@ public class Grafo {
         System.out.println("1. Mostrar Matriz de Adyacencias");
         System.out.println("2. Agregar arista entre dos nodos");
         System.out.println("3. Verificar camino entre nodos");
+        System.out.println("4. Mostrar grafo (nodos unidos por aristas)");
         System.out.println("0. Volver\n");
         System.out.print("Opcion: ");
     }
@@ -62,6 +63,19 @@ public class Grafo {
         return existe;
     }
     
+    public void printGrafo() {
+        System.out.println("\n Grafo:\n");
+        for (int i = 0; i < 10; i++) {
+            for (int j = i+1; j < 10; j++) {
+                if (MA[i][j] == 1) { //si existe una arista entre nodos
+                    System.out.println(" (" + i + ", " + j + ")");
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println("\n");
+    }
+    
     public static void iniciar() {
         int opcion;
         Scanner sc = new Scanner(System.in);
@@ -91,9 +105,9 @@ public class Grafo {
                 case 3 -> {
                     System.out.println("\n -- Verificar camino entre nodos");
                     if (existeCamino()) {
-                        System.out.println("Hay un camino entre esos nodos.");
+                        System.out.println("Hay un camino pasando por esos nodos.");
                     } else {
-                        System.out.println("No hay un camino entre esos nodos.");
+                        System.out.println("No hay un camino pasando por esos nodos.");
                     }
                 }
                 case 0 -> {}
