@@ -1,3 +1,6 @@
+/**
+ * Excepto por menu() e iniciar(), todo lo hizo ChatGPT-3.5
+ */
 package tobias.taller2_0;
 
 import java.util.HashMap;
@@ -7,6 +10,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class GrafoDirigido {
+    
     public static Set<Integer> nodos = new HashSet<>();
     public static Set<Arista> aristas = new HashSet<>();
     public static Map<Arista, Integer> etiquetas = new HashMap<>();
