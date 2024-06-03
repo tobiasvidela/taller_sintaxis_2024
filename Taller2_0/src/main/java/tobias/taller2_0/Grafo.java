@@ -37,7 +37,7 @@ public class Grafo {
     public static boolean existeCamino() {
         Scanner sc = new Scanner(System.in);
         char confirm;
-        ArrayList<Integer> nodos = new ArrayList<Integer>();
+        ArrayList<Integer> nodos = new ArrayList<>();
         
         System.out.println("\n Sólo puedes ingresar de 0 hasta 10 nodos");
         for (int i = 0; i < 10; i++) {
