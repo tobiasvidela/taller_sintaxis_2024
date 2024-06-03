@@ -99,11 +99,11 @@ public class Grafo {
                     do {
                         System.out.print("\nIngrese el nodo: ");
                         i = Integer.parseInt(sc.nextLine());
-                    } while (i < 0 || i > 10);
+                    } while (!(i >= 0 && i < 10));
                     do {
                         System.out.print("\nIngrese el siguiente nodo: ");
                         j = Integer.parseInt(sc.nextLine());
-                    } while (j < 0 || j > 10);
+                    } while (!(i >= 0 && i < 10));
                     agregarArista(i,j);
                     System.out.println("\n Arista agregada.");
                     mostrarMA();

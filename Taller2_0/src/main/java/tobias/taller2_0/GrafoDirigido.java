@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GrafoDirigido {
     public static void menu() {
-        System.out.println("Grafo no dirigido\n\n");
+        System.out.println("Grafo dirigido\n\n");
         System.out.println("1. Mostrar Matriz de Adyacencias");
         System.out.println("2. Agregar arista entre dos nodos");
         System.out.println("3. Verificar camino entre nodos");
