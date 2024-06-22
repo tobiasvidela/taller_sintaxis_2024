@@ -30,7 +30,7 @@ public class Main {
                     Grafo.iniciar();
                 }
                 case 2 -> {
-                    //GrafoDirigido.iniciar();
+                    GrafoDirigido.iniciar();
                 }
                 case 0 -> {}
             }
