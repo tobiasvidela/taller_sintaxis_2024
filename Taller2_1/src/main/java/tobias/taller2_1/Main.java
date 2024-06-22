@@ -8,8 +8,9 @@ import java.util.Scanner;
  * @author Videla Guliotti Tobías Uriel
  */
 public class Main {
+    //Pila y Cola de tamaño estático, se puede modificar según lo que se necesite. Se sugiere tamaño 3 o 5 para pruebas.
     public static Pila pila = new Pila(100);
-    //public static Cola cola;
+    public static Cola cola = new Cola(100);
     
     public static void menu() {
         System.out.println("Mini-Sistema de Pila y Cola:\n\n");
@@ -49,10 +50,23 @@ public class Main {
                 case 4 -> {
                     System.out.println("Tope de la pila: " + pila.peek());
                 }
-                case 5 -> {}
-                case 6 -> {}
-                case 7 -> {}
-                case 8 -> {}
+                case 5 -> {
+                    cola.printCola();
+                }
+                case 6 -> {
+                    int n;
+                    System.out.print("\nIngrese un numero entero positivo: ");
+                    do {
+                        n = Integer.parseInt(sc.nextLine());
+                    } while (n <= 0);
+                    cola.enqueue(n);
+                }
+                case 7 -> {
+                    cola.dequeue();
+                }
+                case 8 -> {
+                    System.out.println("Cabeza de la cola: " + cola.front());
+                }
                 case 0 -> {}
             }
         } while(opcion != 0);
